@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Sudoku</title>
+</head>
+
+<body>
+	<div>
+		<div id="start_box">
+			<div class="btn" onclick="start()">Start</div>
+			<div class="btn" onclick="rules()">Rules</div>
+			<div id="rules">
+				When you start a game of Sudoku, some blocks will be pre-filled for you. You cannot change
+				these numbers in the course of the game.<br><br>
+
+				· Each column must contain all of the numbers 1 through 9 and no two numbers in the same column of a
+				Sudoku puzzle can be the same.<br><br>
+
+				· Each row must contain all of the numbers 1 through 9 and no two numbers in the same row of a Sudoku
+				puzzle can be the same.<br><br>
+
+				· Each block must contain all of the numbers 1 through 9 and no two numbers in the same block of a
+				Sudoku puzzle can be the same.
+			</div>
+		</div>
+		<div id="time">
+			<p><span id="min">59</span>:<span id="sec">59</span></p>
+		</div>
+		<div id=sudoku>
+			<div id="box_1" class="box">
+				<input class="block row_1 column_1"></input>
+				<input class="block row_1 column_2"></input>
+				<input class="block row_1 column_3"></input>
+				<input class="block row_2 column_1"></input>
+				<input class="block row_2 column_2"></input>
+				<input class="block row_2 column_3"></input>
+				<input class="block row_3 column_1"></input>
+				<input class="block row_3 column_2"></input>
+				<input class="block row_3 column_3"></input>
+			</div>
+			<div id="box_2" class="box">
+				<input class="block row_1 column_4"></input>
+				<input class="block row_1 column_5"></input>
+				<input class="block row_1 column_6"></input>
+				<input class="block row_2 column_4"></input>
+				<input class="block row_2 column_5"></input>
+				<input class="block row_2 column_6"></input>
+				<input class="block row_3 column_4"></input>
+				<input class="block row_3 column_5"></input>
+				<input class="block row_3 column_6"></input>
+			</div>
+			<div id="box_3" class="box">
+				<input class="block row_1 column_7"></input>
+				<input class="block row_1 column_8"></input>
+				<input class="block row_1 column_9"></input>
+				<input class="block row_2 column_7"></input>
+				<input class="block row_2 column_8"></input>
+				<input class="block row_2 column_9"></input>
+				<input class="block row_3 column_7"></input>
+				<input class="block row_3 column_8"></input>
+				<input class="block row_3 column_9"></input>
+			</div>
+			<div id="box_4" class="box">
+				<input class="block row_4 column_1"></input>
+				<input class="block row_4 column_2"></input>
+				<input class="block row_4 column_3"></input>
+				<input class="block row_5 column_1"></input>
+				<input class="block row_5 column_2"></input>
+				<input class="block row_5 column_3"></input>
+				<input class="block row_6 column_1"></input>
+				<input class="block row_6 column_2"></input>
+				<input class="block row_6 column_3"></input>
+			</div>
+			<div id="box_5" class="box">
+				<input class="block row_4 column_4"></input>
+				<input class="block row_4 column_5"></input>
+				<input class="block row_4 column_6"></input>
+				<input class="block row_5 column_4"></input>
+				<input class="block row_5 column_5"></input>
+				<input class="block row_5 column_6"></input>
+				<input class="block row_6 column_4"></input>
+				<input class="block row_6 column_5"></input>
+				<input class="block row_6 column_6"></input>
+			</div>
+			<div id="box_6" class="box">
+				<input class="block row_4 column_7"></input>
+				<input class="block row_4 column_8"></input>
+				<input class="block row_4 column_9"></input>
+				<input class="block row_5 column_7"></input>
+				<input class="block row_5 column_8"></input>
+				<input class="block row_5 column_9"></input>
+				<input class="block row_6 column_7"></input>
+				<input class="block row_6 column_8"></input>
+				<input class="block row_6 column_9"></input>
+			</div>
+			<div id="box_7" class="box">
+				<input class="block row_7 column_1"></input>
+				<input class="block row_7 column_2"></input>
+				<input class="block row_7 column_3"></input>
+				<input class="block row_8 column_1"></input>
+				<input class="block row_8 column_2"></input>
+				<input class="block row_8 column_3"></input>
+				<input class="block row_9 column_1"></input>
+				<input class="block row_9 column_2"></input>
+				<input class="block row_9 column_3"></input>
+			</div>
+			<div id="box_8" class="box">
+				<input class="block row_7 column_4"></input>
+				<input class="block row_7 column_5"></input>
+				<input class="block row_7 column_6"></input>
+				<input class="block row_8 column_4"></input>
+				<input class="block row_8 column_5"></input>
+				<input class="block row_8 column_6"></input>
+				<input class="block row_9 column_4"></input>
+				<input class="block row_9 column_5"></input>
+				<input class="block row_9 column_6"></input>
+			</div>
+			<div id="box_9" class="box">
+				<input class="block row_7 column_7"></input>
+				<input class="block row_7 column_8"></input>
+				<input class="block row_7 column_9"></input>
+				<input class="block row_8 column_7"></input>
+				<input class="block row_8 column_8"></input>
+				<input class="block row_8 column_9"></input>
+				<input class="block row_9 column_7"></input>
+				<input class="block row_9 column_8"></input>
+				<input class="block row_9 column_9"></input>
+			</div>
+		</div>
+		<div id="result">
+			<p id="text"></p>
+		</div>
+		<div id="back" onclick="back()">Back</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
